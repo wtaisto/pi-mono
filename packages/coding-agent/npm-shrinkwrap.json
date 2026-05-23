@@ -1,17 +1,17 @@
 {
 	"name": "@earendil-works/pi-coding-agent",
-	"version": "0.75.5-fork.1",
+	"version": "0.75.6-fork.1",
 	"lockfileVersion": 3,
 	"requires": true,
 	"packages": {
 		"": {
 			"name": "@earendil-works/pi-coding-agent",
-			"version": "0.75.5-fork.1",
+			"version": "0.75.6-fork.1",
 			"license": "MIT",
 			"dependencies": {
-				"@earendil-works/pi-agent-core": "^0.75.5-fork.1",
-				"@earendil-works/pi-ai": "^0.75.5-fork.1",
-				"@earendil-works/pi-tui": "^0.75.5-fork.1",
+				"@earendil-works/pi-agent-core": "^0.75.6-fork.1",
+				"@earendil-works/pi-ai": "^0.75.6-fork.1",
+				"@earendil-works/pi-tui": "^0.75.6-fork.1",
 				"@silvia-odwyer/photon-node": "0.3.4",
 				"chalk": "5.6.2",
 				"cross-spawn": "7.0.6",
@@ -462,11 +462,11 @@
 			}
 		},
 		"node_modules/@earendil-works/pi-agent-core": {
-			"version": "0.75.5-fork.1",
-			"resolved": "https://registry.npmjs.org/@earendil-works/pi-agent-core/-/pi-agent-core-0.75.5-fork.1.tgz",
+			"version": "0.75.6-fork.1",
+			"resolved": "https://registry.npmjs.org/@earendil-works/pi-agent-core/-/pi-agent-core-0.75.6-fork.1.tgz",
 			"license": "MIT",
 			"dependencies": {
-				"@earendil-works/pi-ai": "^0.75.5-fork.1",
+				"@earendil-works/pi-ai": "^0.75.6-fork.1",
 				"ignore": "7.0.5",
 				"typebox": "1.1.38",
 				"yaml": "2.9.0"
@@ -476,8 +476,8 @@
 			}
 		},
 		"node_modules/@earendil-works/pi-ai": {
-			"version": "0.75.5-fork.1",
-			"resolved": "https://registry.npmjs.org/@earendil-works/pi-ai/-/pi-ai-0.75.5-fork.1.tgz",
+			"version": "0.75.6-fork.1",
+			"resolved": "https://registry.npmjs.org/@earendil-works/pi-ai/-/pi-ai-0.75.6-fork.1.tgz",
 			"license": "MIT",
 			"dependencies": {
 				"@anthropic-ai/sdk": "0.91.1",
@@ -499,8 +499,8 @@
 			}
 		},
 		"node_modules/@earendil-works/pi-tui": {
-			"version": "0.75.5-fork.1",
-			"resolved": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.75.5-fork.1.tgz",
+			"version": "0.75.6-fork.1",
+			"resolved": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.75.6-fork.1.tgz",
 			"license": "MIT",
 			"dependencies": {
 				"get-east-asian-width": "1.6.0",
@@ -686,7 +686,7 @@
 			],
 			"optional": true
 		},
-		"node_modules/@mariozechner/clipboard-win32-x64-msvc": {
+		"node_modules/@mariozechner/clipboard/node_modules/@mariozechner/clipboard-win32-x64-msvc": {
 			"version": "0.3.6",
 			"resolved": "https://registry.npmjs.org/@mariozechner/clipboard-win32-x64-msvc/-/clipboard-win32-x64-msvc-0.3.6.tgz",
 			"integrity": "sha512-S4xfPmERC8ZkiLHe3vekZCjdDwNEETCuvCgQK2kP6/TnvmUkq1y2Pk+DjM4t8uh9KMX9bH4zs5ePcKa8GTXmfg==",

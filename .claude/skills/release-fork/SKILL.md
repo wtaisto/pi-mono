@@ -20,13 +20,21 @@ Stop on any failure:
 3. Current branch is `main`.
 4. `git fetch origin` then `git rev-list main..origin/main` is empty (local main is up to date with the remote).
 
+## Versioning convention
+
+This fork uses `<next-upstream-patch>-fork.<N>` pre-release suffixes — e.g. if upstream's latest release is `0.75.5`, the next fork release is `0.75.6-fork.1`, then `0.75.6-fork.2`, etc. After a sync from upstream that brings in their `0.76.0`, the next fork release becomes `0.76.1-fork.1`.
+
+**Why this scheme, not `<current-upstream>-fork.<N>`**: pi's built-in update notifier (`packages/coding-agent/src/utils/version-check.ts`) does semver-aware comparison against upstream's `https://pi.dev/api/latest-version`. Pre-release identifiers sort BELOW the plain version in semver, so `0.75.5-fork.1 < 0.75.5` — running a fork build with that version triggers a "0.75.5 is newer, run pi update" banner every launch. Using `0.75.6-fork.1` instead sorts as `0.75.5 < 0.75.6-fork.1 < 0.75.6`: the banner stays quiet until upstream actually ships something newer than the patch you're forked off, and when they do, you see it.
+
 ## Inputs
 
-Ask the user for the bump kind unless they already specified one. Accept:
-- `patch` | `minor` | `major`
-- Or an explicit `x.y.z` greater than the current version.
+Ask the user for the suffix bump (almost always `1` for the first release after a sync, then incrementing). Determine the patch part automatically:
 
-The canonical "current version" is whatever is in `packages/ai/package.json` (this matches what `scripts/release.mjs` uses).
+1. Read the current version from `packages/ai/package.json`.
+2. If it already has a `-fork.<N>` suffix, the new version reuses the same `major.minor.patch` and bumps the suffix to `N+1` (you're rebuilding without a fresh sync).
+3. If it's a plain `x.y.z` (just merged from upstream), the new version is `x.y.(z+1)-fork.1`.
+
+The user can override with an explicit version — accept any valid semver greater than the current version. Reject inputs that would regress the update-checker comparison (e.g. dropping the `-fork.<N>` suffix entirely or using a suffix that sorts below the upstream release of the same patch).
 
 ## Steps
 
